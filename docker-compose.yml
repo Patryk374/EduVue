@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: eduvue
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - '5432:5432'
+  backend:
+    build: ./backend
+    depends_on:
+      - db
+    environment:
+      ConnectionStrings__Default: Host=db;Port=5432;Username=postgres;Password=postgres;Database=eduvue
+    ports:
+      - '5000:5000'
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - '3000:3000'
