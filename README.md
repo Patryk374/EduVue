@@ -2,6 +2,15 @@
 
 Prosty projekt demonstracyjny aplikacji typu frontend/backend. Backend napisany w .NET 6, frontend w Vue.js (Vite) oraz baza danych PostgreSQL uruchamiane są w kontenerach Dockera.
 
+## Funkcje
+
+- Interfejs użytkownika w Vue.js z wykorzystaniem Tailwind CSS
+- Tłumaczenia w języku polskim i angielskim (vue-i18n)
+- Integracja z Firebase dla przechowywania danych kursów
+- Responsywny design
+- Tryb ciemny/jasny
+- Filtrowanie i wyszukiwanie kursów
+
 ## Uruchamianie w trybie developerskim
 
 1. Uruchom usługi z obserwacją zmian:
@@ -9,10 +18,27 @@ Prosty projekt demonstracyjny aplikacji typu frontend/backend. Backend napisany 
    docker-compose up
    ```
    Kontenery backendu i frontendu korzystają z `dotnet watch` oraz `vite`, dzięki czemu zmiany w kodzie są od razu widoczne.
-2. Frontend będzie dostępny pod `http://localhost:3000`, backend pod `http://localhost:5000`.
+2. Frontend będzie dostępny pod `http://localhost:3000`, backend pod `http://localhost:5001`.
 
 ## Struktura
 
 - `backend/` – aplikacja ASP.NET minimal API z jednym endpointem `/courses` zwracającym listę kursów z bazy.
-- `frontend/` – prosta aplikacja Vue wypisująca dane z `/courses`.
+- `frontend/` – aplikacja Vue.js z interfejsem użytkownika, tłumaczeniami i integracją Firebase.
 - `db/init.sql` – skrypt SQL tworzący tabelę `courses` i przykładowe dane.
+
+## Technologie
+
+- Frontend:
+  - Vue.js 3
+  - Vite
+  - Tailwind CSS
+  - vue-i18n
+  - Firebase
+  - Pinia (state management)
+- Backend:
+  - .NET 6
+  - PostgreSQL
+  - Dapper
+- DevOps:
+  - Docker
+  - Docker Compose

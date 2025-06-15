@@ -10,6 +10,6 @@ RUN dotnet publish EduVue.Api/EduVue.Api.csproj -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /app/publish .
-ENV ASPNETCORE_URLS=http://0.0.0.0:5000
-EXPOSE 5000
+ENV ASPNETCORE_URLS=http://0.0.0.0:5001
+EXPOSE 5001
 ENTRYPOINT ["dotnet", "EduVue.Api.dll"]

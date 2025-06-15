@@ -15,13 +15,13 @@ services:
     working_dir: /src
     volumes:
       - ./backend/EduVue.Api:/src
-    command: sh -c "dotnet restore && dotnet watch run --urls http://0.0.0.0:5000"
+    command: sh -c "dotnet restore && dotnet watch run --urls http://0.0.0.0:5001"
     depends_on:
       - db
     environment:
       ConnectionStrings__Default: Host=db;Port=5432;Username=postgres;Password=postgres;Database=eduvue
     ports:
-      - '5000:5000'
+      - '5001:5001'
   frontend:
     image: node:18-alpine
     working_dir: /app
