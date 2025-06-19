@@ -18,12 +18,18 @@ Prosty projekt demonstracyjny aplikacji typu frontend/backend. Backend napisany 
    docker-compose up
    ```
    Kontenery backendu i frontendu korzystają z `dotnet watch` oraz `vite`, dzięki czemu zmiany w kodzie są od razu widoczne.
-2. Frontend będzie dostępny pod `http://localhost:3000`, backend pod `http://localhost:5001`.
+2. Frontend będzie dostępny pod `http://localhost:3000`, backend pod `http://localhost:5001`, a Expo DevTools dla aplikacji mobilnej na `http://localhost:19000`.
+3. Aplikację mobilną możesz też uruchomić lokalnie:
+   ```bash
+   cd mobile
+   npx expo start
+   ```
 
 ## Struktura
 
 - `backend/` – aplikacja ASP.NET minimal API z jednym endpointem `/courses` zwracającym listę kursów z bazy.
 - `frontend/` – aplikacja Vue.js z interfejsem użytkownika, tłumaczeniami i integracją Firebase.
+- `mobile/` – aplikacja React Native (Expo) uruchamiana równocześnie z pozostałymi usługami.
 - `db/init.sql` – skrypt SQL tworzący tabelę `courses` i przykładowe dane.
 
 ## Technologie

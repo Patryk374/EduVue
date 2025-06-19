@@ -4,8 +4,7 @@ import { getStorage } from 'firebase/storage'
 import { getAnalytics } from 'firebase/analytics'
 
 const firebaseConfig = {
-  // Wklej tutaj swoją konfigurację z Firebase Console
-  // Powinna wyglądać podobnie do tej struktury:
+  // Konfiguracja Firebase
   apiKey: "AIzaSyAH8HTzBZySfqE46g4xSl1fYUw53iJH1aI",
   authDomain: "program-b68e8.firebaseapp.com",
   projectId: "program-b68e8",
