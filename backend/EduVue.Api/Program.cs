@@ -18,4 +18,4 @@ app.MapGet("/courses", async () =>
 
 app.Run();
 
-record Course(int Id, string Nazwa, string Dlugosc_trwania, string Sugerowany_przedzial_wiekowy, string Szczegoly);
+public record Course(int Id, string Nazwa, string Dlugosc_trwania, string Sugerowany_przedzial_wiekowy, string Szczegoly);
