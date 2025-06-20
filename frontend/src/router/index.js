@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Courses from '../views/Courses.vue'
 import CourseDetail from '../views/CourseDetail.vue'
+import CanvasTest from "../canvas/CanvasDashboard.vue";
 
 const routes = [
   {
@@ -29,6 +30,13 @@ const routes = [
       title: 'Course Details'
     }
   },
+  {
+    path: '/canvas',
+    name: 'CanvasTest',
+    component: CanvasTest,
+    meta: { title: 'Canvas Test' }
+  },
+  //   musi byc ostatni bo inaczej zbiera wszystkie nieznane sciezki
   {
     path: '/:pathMatch(.*)*',
     redirect: '/'
