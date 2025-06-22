@@ -24,6 +24,7 @@ export default {
           light: '#FFFFFF',
           dark: '#1F2937',
         },
+        accent: 'var(--accent-color)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out forwards',
