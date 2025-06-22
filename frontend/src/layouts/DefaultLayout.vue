@@ -6,7 +6,7 @@
         <div class="flex justify-between h-16">
           <div class="flex items-center">
             <router-link :to="{ name: 'Home' }" class="flex-shrink-0 flex items-center">
-              <span class="text-2xl font-bold text-primary-light dark:text-primary-dark transition-colors duration-300">EduVue</span>
+              <span class="text-2xl font-bold text-[var(--accent-color)] transition-colors duration-300">EduVue</span>
             </router-link>
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
               <router-link
@@ -25,16 +25,30 @@
             <!-- Przełącznik motywu -->
             <button
               @click="themeStore.toggleTheme"
-              class="p-2 rounded-lg transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+              class="p-2 rounded-lg transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-gray-700 light:hover:bg-gray-700"
               :title="themeStore.isDark ? 'Przełącz na jasny motyw' : 'Przełącz na ciemny motyw'"
             >
               <SunIcon v-if="themeStore.isDark" class="h-6 w-6 text-yellow-400" />
               <MoonIcon v-else class="h-6 w-6 text-gray-600" />
             </button>
 
+            <select
+                v-model="selectedColor"
+                @change="changeColor"
+                class="p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-card-dark text-sm text-gray-800 dark:text-gray-200"
+                title="Wybierz kolor motywu"
+            >
+              <option value="indigo">indigo</option>
+              <option value="blue">blue</option>
+              <option value="green">green</option>
+              <option value="orange">orange</option>
+
+            </select>
+
+
             <button
               @click="toggleLanguage"
-              class="p-2 rounded-lg transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+              class="p-2 rounded-lg text-gray-600 dark:text-white transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-gray-700"
               :title="locale === 'pl' ? 'Switch to English' : 'Przełącz na polski'"
             >
               <span class="text-sm font-medium">{{ locale === 'pl' ? 'EN' : 'PL' }}</span>
@@ -147,6 +161,20 @@ const toggleTheme = () => {
 const toggleLanguage = () => {
   locale.value = locale.value === 'pl' ? 'en' : 'pl'
 }
+
+const selectedColor = ref('indigo')
+
+const changeColor = () => {
+  document.documentElement.setAttribute('data-color', selectedColor.value)
+  localStorage.setItem('theme-color', selectedColor.value)
+}
+
+onMounted(() => {
+  const saved = localStorage.getItem('theme-color')
+  selectedColor.value = saved || 'indigo'
+  document.documentElement.setAttribute('data-color', selectedColor.value)
+})
+
 </script>
 
 <style scoped>

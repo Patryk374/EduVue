@@ -20,4 +20,17 @@
   .input-primary {
     @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm;
   }
-} 
+}
+
+:root[data-color='orange'] {
+  --accent-color: #b8832a;
+}
+:root[data-color='blue'] {
+  --accent-color: #779fe8;
+}
+:root[data-color='indigo'] {
+  --accent-color: #6366f1;
+}
+:root[data-color='green'] {
+  --accent-color: #11913d;
+}
