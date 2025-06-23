@@ -1,7 +1,7 @@
 <template>
   <div class="animate-fade-in">
     <!-- Nagłówek kursu -->
-    <div class="w-full bg-gradient-to-r from-primary-light to-primary-dark dark:from-primary-dark dark:to-primary-light text-white py-16 sm:py-24 transition-colors duration-300">
+    <div class="w-full bg-[var(--accent-color)] text-white py-16 sm:py-24 transition-colors duration-300">
       <div class="w-full px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto">
           <router-link
@@ -38,7 +38,7 @@
             <h1 class="text-4xl sm:text-5xl font-bold">{{ translatedCourse.title }}</h1>
             <p class="text-xl text-gray-100">{{ translatedCourse.description }}</p>
             <button
-              class="bg-white text-primary-light dark:bg-gray-800 dark:text-primary-dark px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                class="bg-white text-[var(--accent-color)] dark:bg-white dark:text-[var(--accent-color)] hover:brightness-110 px-8 py-3 rounded-lg font-semibold transition-colors duration-300"
             >
               {{ t('course.start') }}
             </button>
