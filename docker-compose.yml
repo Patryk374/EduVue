@@ -39,7 +39,7 @@ services:
     volumes:
       - ./mobile:/app
       - /app/node_modules
-    command: sh -c "npm install --legacy-peer-deps && npx expo start --tunnel"
+    command: sh -c "npm install -g @expo/ngrok@^4.1.0 && npm install --legacy-peer-deps && EXPO_NONINTERACTIVE=1 npx expo start --tunnel"
     depends_on:
       - backend
     ports:

@@ -8,12 +8,17 @@ import { useLanguage } from '../LanguageContext';
 export default function CourseDetailScreen({ route, navigation }) {
   const { language } = useLanguage();
   const { theme } = useTheme();
-  const { course } = route.params;
+  const course = route?.params?.course;
 
   useEffect(() => {
+    if (!course) return;
     const title = i18n.locale === 'en' ? course.title_en : course.title;
     navigation.setOptions({ title });
-  }, [navigation, language, course.title, course.title_en]);
+  }, [navigation, language, course?.title, course?.title_en]);
+
+  if (!course) {
+    return null;
+  }
   return (
     <Card style={[styles.container, { backgroundColor: theme.colors.background }]}> 
       <Card.Content>

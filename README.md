@@ -48,3 +48,9 @@ Prosty projekt demonstracyjny aplikacji typu frontend/backend. Backend napisany 
 - DevOps:
   - Docker
   - Docker Compose
+
+## Testing (aplikacja mobilna)
+
+Aplikacja React Native korzysta z biblioteki `@testing-library/react-native` w wersji `13.2.0`,
+która zapewnia kompatybilność z React 19 oraz React Native 0.79. W razie problemów
+z testami upewnij się, że zależności zostały zainstalowane poleceniem `npm install` w katalogu `mobile`.
