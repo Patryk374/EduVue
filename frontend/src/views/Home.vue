@@ -78,24 +78,25 @@
           <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-gray-900 dark:text-white text-center transition-colors duration-300">
             {{ t('home.whyChoose') }}
           </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div
-                v-for="(feature, index) in features"
-                :key="feature.title"
-                class="text-center p-6 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 animate-slide-in"
-                :style="{ animationDelay: `${index * 0.1}s` }"
-            >
-              <div class="w-16 h-16 mx-auto mb-4 text-[var(--accent-color)] transition-colors duration-300">
-                <component :is="feature.icon" class="w-full h-full" />
+            <div class="overflow-hidden">
+              <div class="flex carousel-track">
+                <div
+                    v-for="(feature, index) in carouselFeatures"
+                    :key="index"
+                    class="carousel-item text-center p-6 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
+                >
+                  <div class="w-16 h-16 mx-auto mb-4 text-[var(--accent-color)] transition-colors duration-300">
+                    <component :is="feature.icon" class="w-full h-full" />
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white transition-colors duration-300">
+                    {{ feature.title }}
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-300 transition-colors duration-300">
+                    {{ feature.description }}
+                  </p>
+                </div>
               </div>
-              <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white transition-colors duration-300">
-                {{ feature.title }}
-              </h3>
-              <p class="text-gray-600 dark:text-gray-300 transition-colors duration-300">
-                {{ feature.description }}
-              </p>
             </div>
-          </div>
         </div>
       </div>
     </section>
@@ -138,11 +139,23 @@ const features = computed(() => [
     icon: ClockIcon
   }
 ])
+
+const carouselFeatures = computed(() => [...features.value, ...features.value])
 </script>
 
 <style scoped>
 .animate-slide-in {
   animation: slideIn 0.5s ease-out forwards;
+}
+
+.carousel-track {
+  width: 200%;
+  display: flex;
+  animation: carousel 20s linear infinite;
+}
+
+.carousel-item {
+  flex: 0 0 33.3333%;
 }
 
 @keyframes slideIn {
@@ -153,6 +166,15 @@ const features = computed(() => [
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes carousel {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 </style>
