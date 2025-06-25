@@ -22,7 +22,7 @@ services:
     ports:
       - '5001:5001'
   frontend:
-    image: magsxl09/frontend:1
+    image: node:20-alpine
     working_dir: /app
     volumes:
       - ./frontend:/app
