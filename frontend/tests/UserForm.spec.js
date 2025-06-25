@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from "vitest"
 import { mount, flushPromises } from '@vue/test-utils'
 import UserForm from '../src/canvas/components/UserForm.vue'
 
-// Test 3: UserForm emits submit after posting data
+// Test 3: UserForm emituje zdarzenie submit po wysłaniu danych
 
 describe('UserForm.vue', () => {
   it('submits user data and emits event', async () => {

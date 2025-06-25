@@ -6,8 +6,7 @@ import UsersList from '../src/canvas/components/UsersList.vue'
 import UserForm from '../src/canvas/components/UserForm.vue'
 import UserDetail from '../src/canvas/components/UserDetail.vue'
 
-// Test 1: CanvasDashboard renders subcomponents with data
-
+// Test 1: CanvasDashboard renderuje podkomponenty z danymi
 describe('CanvasDashboard.vue', () => {
   it('renders dashboard subcomponents with fetched data', async () => {
     const account = { id: 1, name: 'John' }

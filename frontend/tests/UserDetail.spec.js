@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from "vitest"
 import { mount, flushPromises } from '@vue/test-utils'
 import UserDetail from '../src/canvas/components/UserDetail.vue'
 
-// Test 4: UserDetail fetches and displays user data
+// Test 4: UserDetail pobiera i wyświetla dane użytkownika
 
 describe('UserDetail.vue', () => {
   it('fetches user and renders details', async () => {

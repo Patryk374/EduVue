@@ -12,7 +12,7 @@ vi.mock('../src/firebase', () => ({
 import Login from '../src/views/Login.vue'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 
-// Test 9: Login form calls Firebase auth and redirects
+// Test 9: Formularz logowania wywołuje autoryzację Firebase i przekierowuje
 
 describe('Login.vue', () => {
   it('logs in user and redirects', async () => {

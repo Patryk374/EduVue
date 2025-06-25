@@ -3,7 +3,8 @@ import { setActivePinia, createPinia } from 'pinia'
 import { useThemeStore } from '../src/stores/theme'
 
 describe('theme store', () => {
-  // Test checks that toggling theme flips isDark state
+// Test sprawdza, czy przełączanie motywu zmienia stan isDark
+
   it('toggleTheme switches value', () => {
     setActivePinia(createPinia())
     const store = useThemeStore()

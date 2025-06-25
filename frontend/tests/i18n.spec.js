@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest"
 import i18n from '../src/i18n'
 
-// Test 10: i18n language switching
+// Test 10: przełączanie języków za pomocą i18n
 
 describe('i18n', () => {
   it('changes language and translates keys', () => {

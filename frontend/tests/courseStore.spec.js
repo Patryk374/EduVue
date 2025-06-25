@@ -21,7 +21,7 @@ vi.mock('firebase/firestore', () => ({
   where: vi.fn()
 }))
 
-// Test 7: course store fetchCourses updates state
+// Test 7: metoda fetchCourses w course store aktualizuje stan
 
 describe('course store', () => {
   it('fetchCourses populates courses', async () => {

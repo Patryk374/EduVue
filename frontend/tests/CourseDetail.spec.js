@@ -16,7 +16,7 @@ vi.mock('vue-i18n', () => ({
 import { useCourseStore } from '../src/stores/course'
 import CourseDetail from '../src/views/CourseDetail.vue'
 
-// Test 5: CourseDetail renders course based on route param
+// Test 5: CourseDetail renderuje kurs na podstawie parametru w trasie
 
 describe('CourseDetail.vue', () => {
   it('displays course details for given id', async () => {

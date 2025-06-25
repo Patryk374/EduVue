@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from "vitest"
 import { mount } from '@vue/test-utils'
 import UsersList from '../src/canvas/components/UsersList.vue'
 
-// Test 2: UsersList renders list of users
+// Test 2: UsersList renderuje listę użytkowników
 
 describe('UsersList.vue', () => {
   it('renders provided users', () => {

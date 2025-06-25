@@ -4,7 +4,7 @@ import { useThemeStore } from '../src/stores/theme'
 import { nextTick } from 'vue'
 
 describe('theme store', () => {
-  // Test 8: toggling light/dark theme
+// Test 8: przełączanie motywu jasny/ciemny
   it('toggles theme state', async () => {
     localStorage.setItem('theme', 'light')
     setActivePinia(createPinia())

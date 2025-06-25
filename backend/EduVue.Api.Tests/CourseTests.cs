@@ -3,7 +3,7 @@ using Xunit;
 
 namespace EduVue.Api.Tests
 {
-    // Test verifies that the Course record stores values passed to the constructor
+    // Test sprawdza, czy rekord kursu przechowuje wartości przekazane do konstruktora
     public class CourseTests
     {
         [Fact]

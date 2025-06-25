@@ -16,7 +16,7 @@ vi.mock('vue-i18n', () => ({
 import { useCourseStore } from '../src/stores/course'
 import Courses from '../src/views/Courses.vue'
 
-// Test 6: Courses view loads and lists courses
+// Test 6: Widok Courses ładuje się i wyświetla listę kursów
 
 describe('Courses.vue', () => {
   it('loads courses from store and renders them', async () => {
