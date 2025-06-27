@@ -143,14 +143,17 @@ const isMobileMenuOpen = ref(false)
 
 const navigationItems = ref([
   { name: t('nav.home'), to: { name: 'Home' } },
-  { name: t('nav.courses'), to: { name: 'Courses' } }
+  { name: t('nav.courses'), to: { name: 'Courses' } },
+  { name: t('nav.news'), to: { name: 'News' } } 
+
 ])
 
 // Aktualizuj navigationItems gdy zmienia się język
 watch(locale, () => {
   navigationItems.value = [
     { name: t('nav.home'), to: { name: 'Home' } },
-    { name: t('nav.courses'), to: { name: 'Courses' } }
+    { name: t('nav.courses'), to: { name: 'Courses' } },
+    { name: t('nav.news'), to: { name: 'News' } }
   ]
 })
 

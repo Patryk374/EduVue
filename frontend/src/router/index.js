@@ -6,6 +6,8 @@ import Courses from '../views/Courses.vue'
 import CourseDetail from '../views/CourseDetail.vue'
 import CanvasTest from "../canvas/CanvasDashboard.vue";
 import Login from "../views/Login.vue"
+import Nowinki from '../views/Nowinki.vue'
+
 
 const routes = [
   {
@@ -46,6 +48,13 @@ const routes = [
     component: Login,
     meta: { title: 'Login' }
   },
+
+  {
+    path: '/news',
+    name: 'News',
+    component: () => import('../views/Nowinki.vue') 
+  },
+
   //   musi byc ostatni bo inaczej zbiera wszystkie nieznane sciezki
   {
     path: '/:pathMatch(.*)*',

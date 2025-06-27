@@ -4,7 +4,8 @@ const messages = {
   en: {
     nav: {
       home: 'Home',
-      courses: 'Courses'
+      courses: 'Courses',
+      news: 'News'
     },
     home: {
       title: 'Learn Programming with EduVue',
@@ -60,12 +61,19 @@ const messages = {
     },
     footer: {
       rights: 'All rights reserved'
+    },
+    news: {
+      title: 'News from the programming world',
+      subtitle: 'Discover the latest articles and trends via Hacker News',
+      loading: 'Loading news...'
     }
   },
   pl: {
     nav: {
       home: 'Strona główna',
-      courses: 'Kursy'
+      courses: 'Kursy',
+      news: 'Nowinki'
+      
     },
     home: {
       title: 'Ucz się programowania z EduVue',
@@ -121,6 +129,11 @@ const messages = {
     },
     footer: {
       rights: 'Wszelkie prawa zastrzeżone'
+    },
+    news: {
+      title: 'Nowinki ze świata programowania',
+      subtitle: 'Poznaj najnowsze artykuły i trendy dzięki Hacker News',
+      loading: 'Ładowanie nowinek...'
     }
   }
 }
